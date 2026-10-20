@@ -11,6 +11,9 @@ playwright/.cache/
 blob-report/
 test-output.txt
 
+# Evidence (screenshots - not in git)
+avidance/
 # OS
 .DS_Store
 Thumbs.db
+
