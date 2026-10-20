@@ -45,7 +45,25 @@ node server.js
 # Browser mein kholein: http://localhost:3000
 ```
 
-## Tests (Playwright)
+## Playwright CLI (browser automation / codegen)
+
+Install ho chuka hai. Commands:
+
+```bash
+npm run cli:open          # website browser mein kholein
+npm run cli:codegen       # codegen - apne actions se test code generate karo
+npm run cli:screenshot     # screenshot.png save karo
+npm run cli:pdf            # trendtadka.pdf save karo
+npm run cli:mcp            # Playwright MCP server start karo
+
+# Ya direct CLI:
+npx playwright open https://trend-tadka-gwalior.web.app
+npx playwright codegen https://trend-tadka-gwalior.web.app
+npx playwright screenshot --full-page https://trend-tadka-gwalior.web.app shot.png
+npx playwright pdf https://trend-tadka-gwalior.web.app trendtadka.pdf
+```
+
+## Tests (Playwright Test)
 
 Setup:
 ```bash
