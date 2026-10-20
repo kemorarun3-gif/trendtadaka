@@ -1,0 +1,17 @@
+{
+  "name": "trendtadka",
+  "version": "1.0.0",
+  "description": "Trend Tadka - Traditional Fashion Store | Gwalior | Petrol Pump, Thatipur",
+  "homepage": "https://trend-tadka-gwalior.web.app",
+  "author": "Trend Tadka Gwalior",
+  "license": "MIT",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "report": "playwright show-report",
+    "deploy": "firebase deploy --only hosting --project trend-tadka-gwalior"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
+  }
+}
