@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trend Tadka - Myntra Style Store | Gwalior</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Verdana}
+body{background:#fff;color:#282c3f}
+.top-strip{background:#3d0c0c;color:#f5d76e;text-align:center;font-size:13px;padding:8px}
+.header{position:sticky;top:0;background:#fff;display:flex;align-items:center;gap:20px;padding:12px 25px;box-shadow:0 2px 10px rgba(0,0,0,0.1);z-index:100;flex-wrap:wrap}
+.logo{font-family:Georgia;font-size:26px;font-weight:bold;color:#3d0c0c;text-decoration:none}
+.logo span{color:#ff3f6c}
+.nav{display:flex;gap:18px;font-weight:bold;font-size:14px}
+.nav a{text-decoration:none;color:#282c3f;letter-spacing:1px}
+.search{flex:1;min-width:200px;display:flex;background:#f5f5f6;border-radius:5px;padding:10px 15px}
+.search input{border:none;background:transparent;outline:none;width:100%;font-size:14px}
+.actions{display:flex;gap:15px;font-size:13px;font-weight:bold}
+.actions a{text-decoration:none;color:#282c3f;text-align:center}
+.hero{background:linear-gradient(90deg,#3d0c0c,#7a1a00);color:#f5d76e;text-align:center;padding:35px 15px}
+.hero h1{font-family:Georgia;font-size:38px}
+.hero p{margin-top:8px}
+.order-banner{background:#fff4f4;border:3px dashed #ff3f6c;border-radius:12px;padding:20px;text-align:center;max-width:1000px;margin:20px auto}
+.order-banner h2{color:#3d0c0c;font-size:20px;margin-bottom:10px}
+.order-banner p{color:#282c3f;font-size:15px;margin:5px 0}
+.filters{max-width:1200px;margin:15px auto;padding:0 15px;display:flex;gap:10px;flex-wrap:wrap}
+.filters button{border:1px solid #d4d5d9;background:#fff;border-radius:20px;padding:8px 18px;font-size:13px;cursor:pointer}
+.filters button.on{background:#3d0c0c;color:#f5d76e;border-color:#3d0c0c}
+.grid{max-width:1200px;margin:auto;padding:10px 15px 30px;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+.pcard{border:1px solid #eee;border-radius:6px;overflow:hidden;background:#fff;cursor:pointer;transition:transform 0.2s}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+.pimg{height:230px;display:flex;align-items:center;justify-content:center;font-size:70px;background:linear-gradient(135deg,#fff8e1,#f5d76e);overflow:hidden}
+.pimg img{width:100%;height:100%;object-fit:cover}
+.pbody{padding:12px}
+.pbody h3{font-size:15px}
+.pbody p{font-size:13px;color:#535766;margin:4px 0}
+.price{font-weight:bold;font-size:15px}
+.mrp{color:#7e818c;text-decoration:line-through;font-size:13px;font-weight:normal}
+.off{color:#ff905a;font-size:13px}
+.wa{display:block;text-align:center;background:#25D366;color:#fff;text-decoration:none;font-weight:bold;padding:10px;margin-top:10px;border-radius:5px;font-size:14px}
+.sect{max-width:1200px;margin:10px auto;padding:20px 15px}
+.sect h2{font-size:22px;margin-bottom:12px;border-left:5px solid #ff3f6c;padding-left:10px}
+.policy{background:#f5f5f6;border-radius:8px;padding:15px;font-size:13px;line-height:2}
+.policy-grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:15px}
+.policy-card{background:#fff;border:1px solid #eee;border-radius:10px;padding:18px;width:280px;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.policy-card h4{font-size:16px;margin:0 0 10px;color:#3d0c0c}
+.policy-card p{font-size:13px;line-height:1.6;color:#282c3f;margin:6px 0}
+.offer{background:#fff4f4;border:2px dashed #ff3f6c;border-radius:8px;padding:15px;text-align:center}
+footer{background:#fafbfc;border-top:1px solid #eee;margin-top:20px}
+.foot{max-width:1200px;margin:auto;padding:25px 15px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;font-size:13px}
+.foot h4{font-size:13px;margin-bottom:8px}
+.float-wa{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:14px 20px;border-radius:50px;text-decoration:none;font-weight:bold;z-index:200}
+/* Modal */
+.modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.8);overflow-y:auto}
+.modal-content{background:#fff;margin:5% auto;padding:20px;border-radius:12px;width:90%;max-width:700px;position:relative;animation:slide 0.3s}
+@keyframes slide{from{transform:translateY(-50px);opacity:0}to{transform:translateY(0);opacity:1}}
+.close{position:absolute;right:18px;top:15px;font-size:28px;font-weight:bold;color:#aaa;cursor:z-index:1001}
+.close:hover{color:#3d0c0c}
+.modal-img{width:100%;height:300px;object-fit:cover;border-radius:8px;margin-bottom:15px}
+.modal h2{font-size:24px;margin-bottom:8px;color:#3d0c0c}
+.modal p{font-size:14px;line-height:1.6;margin:8px 0;color:#282c3f}
+.modal .detail-row{display:flex;justify-content:space-between;border-bottom:1px solid #eee;padding:8px 0;font-size:14px}
+.modal .detail-row span:first-child{color:#7e818c}
+.modal .detail-row span:last-child{font-weight:bold;color:#3d0c0c}
+.modal .price-big{font-size:24px;font-weight:bold;color:#ff3f6c;margin:15px 0}
+.modal .wa-big{display:block;background:#25D366;color:#fff;text-decoration:none;font-weight:bold;padding:15px;border-radius:8px;text-align:center;font-size:16px;margin-top:15px}
+.fab-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.fab-list span{background:#f5f5f6;border:1px solid #ddd;border-radius:15px;padding:4px 10px;font-size:12px}
+/* Review Cards */
+.review-grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:15px}
+.review-card{background:#fff;border:1px solid #eee;border-radius:10px;padding:18px;width:300px;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.review-header{display:flex;align-items:center;margin-bottom:12px}
+.review-photo{width:55px;height:55px;border-radius:50%;object-fit:cover;border:2px solid #d4af37;margin-right:12px}
+.review-info h4{font-size:15px;margin:0;color:#3d0c0c}
+.review-info p{font-size:12px;color:#7e818c;margin:2px 0 0}
+.review-stars{color:#ff9933;font-size:16px;margin-bottom:8px}
+.review-text{font-size:14px;line-height:1.6;color:#282c3f}
+/* Size Chart */
+.size-section{margin-top:30px}
+.size-box{background:#fff;border:2px solid #d4af37;border-radius:12px;padding:20px}
+.size-title{background:#3d0c0c;color:#f5d76e;padding:10px 15px;border-radius:8px;font-weight:bold;font-size:18px;margin-bottom:15px}
+.size-table{width:100%;border-collapse:collapse;font-size:14px}
+.size-table th{background:#d4af37;color:#3d0c0c;padding:10px;text-align:center;border:1px solid #d4af37}
+.size-table td{padding:10px;text-align:center;border:1px solid #eee}
+.size-table tr:nth-child(even){background:#fafafa}
+.size-notice{margin-top:15px;font-size:13px;color:#7e818c;font-style:italic}
+</style></head>
+<body>
+<div class="top-strip">TREND TADKA Gwalior • Ladies + Mens • Call: 9098161630 • Petrol Pump Thatipur</div>
+<div class="header">
+<a class="logo" href="#">TREND <span>TADKA</span></a>
+<div class="nav"><a href="#women">WOMEN</a><a href="#men">MEN</a><a href="#offers">OFFERS</a><a href="#about">ABOUT</a><a href="#size-chart">SIZE CHART</a></div>
+<div class="search"><input id="q" placeholder="Search for Saree, Kurta, Sherwani, Jeans..." onkeyup="go()"></div>
+<div class="actions"><a href="tel:9098161630">📞<br>Call</a><a href="https://wa.me/919098161630">💬<br>WhatsApp</a><a href="#contact">📍<br>Store</a></div>
+</div>
+
+<div class="hero"><h1>END OF SEASON SALE - Thatipur Gwalior</h1><p>Saree • Suit • Lehenga • Kurta • Sherwani - 50-70% Tak Chhoot Dukaan Par</p></div>
+
+<div class="order-banner">
+<h2>🛒 Order Kaise Karen?</h2>
+<p>1️⃣ Item par click karein → poora detail dekhein</p>
+<p>2️⃣ "Order on WhatsApp" button dabayein</p>
+<p>3️⃣ Phone: <b>9098161630</b> | Address: Petrol Pump, Thatipur, Gwalior</p>
+<a class="wa-big" href="https://wa.me/919098161630?text=Namaste! Mujhe Trend Tadka se order karna hai">🟢 Abhi WhatsApp Par Order Karen</a>
+</div>
+
+<div class="filters">
+<button class="on" onclick="f('all',this)">All</button>
+<button onclick="f('women',this)">Women</button>
+<button onclick="f('men',this)">Men</button>
+<button onclick="f('offer',this)">Offers</button>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div id="productModal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">&times;</span>
+<div class="modal-body">
+<img id="mImg" class="modal-img" alt="Product Image">
+<h2 id="mName">Product Name</h2>
+<div class="detail-row"><span>Category</span><span id="mCat">-</span></div>
+<div class="detail-row"><span>Fabric</span><span id="mFabric">-</span></div>
+<div class="detail-row"><span>Sizes</span><span id="mSize">-</span></div>
+<div class="detail-row"><span>Price</span><span id="mPrice">-</span></div>
+<p><b>Details:</b> <span id="mDesc">-</span></p>
+<div style="margin-top:12px"><b>Care:</b> <span id="mCare">-</span></div>
+<div class="price-big" id="mPriceBig">₹0</div>
+<a id="mWaBtn" class="wa-big" href="#">Order on WhatsApp</a>
+</div>
+</div>
+</div>
+
+<div class="sect" id="women"><h2>WOMEN - Saree Suit Lehenga</h2><div class="policy">Saree, Suit, Lehenga, Kurti, Gown, Palazzo, Blouse, Nighty - M to XXL, sahi rate Thatipur Gwalior.</div></div>
+<div class="sect" id="men"><h2>MEN - Kurta Sherwani Jeans</h2><div class="policy">Kurta-Pajama, Sherwani, Pathani, Jacket, Shirt, Jeans 28-36 - Dulha Set bhi milta hai.</div></div>
+<div class="sect" id="offers"><h2>Offers 🎉</h2><div class="grid"><div class="offer"><b>2 Kurti + Dupatta FREE</b><br>WhatsApp: OFFER1</div><div class="offer"><b>Dulha Set Combo</b><br>WhatsApp: DULHA</div><div class="offer"><b>Family Pack 10% Off</b><br>Dukaan par page dikhao</div></div></div>
+<div class="sect" id="about"><h2>About Us - Trend Tadka</h2><div class="policy"><b>Petrol Pump Thatipur Gwalior</b> - Ladies + Mens traditional + daily wear. Achha kapda, sahi rate, apna vyavhaar. ⏰ 10am-9pm Roz Khula. 📞 9098161630</div></div>
+<div class="sect"><h2>Policies</h2>
+<div class="policy-grid">
+<div class="policy-card">
+<h4>🚚 Delivery</h4>
+<p>Gwalior city mein free delivery (minimum order ₹500 se).</p>
+<p>Gwalior bahar: Rs. 100-200 shipping charge (distance ke hisaab se).</p>
+<p>Delivery time: 2-4 din (Gwalior), 5-7 din (bahar).</p>
+</div>
+<div class="policy-card">
+<h4>💳 Payment</h4>
+<p>💵 Cash on Delivery (COD) available.</p>
+<p>📱 UPI, PhonePe, Google Pay, Paytm.</p>
+<p>💵 Dukaan par cash bhi de sakte hain.</p>
+</div>
+<div class="policy-card">
+<h4>🔄 Exchange / Refund / Return</h4>
+<p>7 din ke andar exchange ya refund (bill + tag ke saath, bina use kiya hua).</p>
+<p>Size issue hota hai to size badhwa sakte hain ya paisa wapas le sakte hain.</p>
+<p>Refund original payment method (UPI/Cash) par wapas milega.</p>
+<p>Stitched/custom order ke liye sirf exchange, refund nahi hoga.</p>
+</div>
+<div class="policy-card">
+<h4>📦 Return / Refund Tarika</h4>
+<p>1️⃣ WhatsApp 9098161630 par photo bhejiye.</p>
+<p>2️⃣ Bill ki photo aur item ki photo bhejiye.</p>
+<p>3️⃣ Exchange chahiye ya refund, batayein.</p>
+<p>4️⃣ Hum dukaan se pick-up arrange karenge.</p>
+<p>5️⃣ Naya item delivery ya paisa wapas milega.</p>
+</div>
+</div>
+</div>
+<div class="sect"><h2>Customer Reviews ⭐ 4.8</h2>
+<div class="review-grid">
+<div class="review-card">
+<img class="review-photo" src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Elderly_Gambian_woman_face_portrait.jpg?width=150" alt="Pooja - Trend Tadka Customer">
+<div class="review-info"><h4>Pooja, Gwalior</h4><p>⭐⭐⭐⭐⭐</p></div>
+<p class="review-text">"Thatipur me best shop! Saree ka collection bahut badhiya hai, rate bhi sahi."</p>
+</div>
+<div class="review-card">
+<img class="review-photo" src="https://upload.wikimedia.org/wikipedia/commons/2/25/Portrait_of_a_Slovene_Peasant_Woman.jpg?width=150" alt="Rahul - Trend Tadka Customer">
+<div class="review-info"><h4>Rahul, Thatipur</h4><p>⭐⭐⭐⭐⭐</p></div>
+<p class="review-text">"Shaadi ke liye Sherwani aur Kurta yahi se liya, fitting perfect!"</p>
+</div>
+<div class="review-card">
+<img class="review-photo" src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Portrait_of_a_Tunisian_Woman_from_Djerid.jpg?width=150" alt="Sunita - Trend Tadka Customer">
+<div class="review-info"><h4>Sunita, Gwalior</h4><p>⭐⭐⭐⭐⭐</p></div>
+<p class="review-text">"WhatsApp par order kiya, same day mil gaya. Bahut achhi service."</p>
+</div>
+<div class="review-card">
+<img class="review-photo" src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Antonello_da_Messina_-_Portrait_of_a_Man_%28Il_Condottiere%29_cleaned_version.jpg?width=150" alt="Anjali - Trend Tadka Customer">
+<div class="review-info"><h4>Anjali, Thatipur</h4><p>⭐⭐⭐⭐☆</p></div>
+<p class="review-text">"Kurti aur Palazzo ka rate bazaar se kam, quality badhiya."</p>
+</div>
+</div>
+<p style="text-align:center;margin-top:15px;font-size:14px">📸 Instagram: <b>@trend.tadka.gwalior</b> | ⭐ Google: <b>Trend Tadka Thatipur</b> par review do</p>
+<p style="text-align:center;margin-top:10px"><a class="btn" href="https://wa.me/919098161630?text=Review:%20Trend%20Tadka%20-%20">✍️ Apna Review Do (WhatsApp)</a></p>
+</div>
+
+<div class="sect size-section" id="size-chart">
+<h2 class="sec">Size Chart - Sahi Size Kaise Chunein?</h2>
+<div class="size-box">
+<div class="size-title">👗 Ladies Size Chart</div>
+<table class="size-table">
+<tr><th>Size</th><th>Bust (Chhati)</th><th>Waist (Kamar)</th><th>Hip (Kulha)</th><th>Fit</th></tr>
+<tr><td>M</td><td>32-34 inch</td><td>26-28 inch</td><td>34-36 inch</td><td>Regular</td></tr>
+<tr><td>L</td><td>34-36 inch</td><td>28-30 inch</td><td>36-38 inch</td><td>Regular</td></tr>
+<tr><td>XL</td><td>36-38 inch</td><td>30-32 inch</td><td>38-40 inch</td><td>Relaxed</td></tr>
+<tr><td>XXL</td><td>38-40 inch</td><td>32-34 inch</td><td>40-42 inch</td><td>Loose</td></tr>
+</table>
+<div class="size-notice">Saree, Suit, Lehenga, Kurti, Gown - Free Size aur M-XXL available. Custom stitching bhi milta hai.</div>
+</div>
+
+<div class="size-box" style="margin-top:20px">
+<div class="size-title">👨 Mens Size Chart</div>
+<table class="size-table">
+<tr><th>Size</th><th>Chest (Seena)</th><th>Waist (Kamar)</th><th>Fit</th><th>Jeans (Inch)</th></tr>
+<tr><td>M</td><td>36-38 inch</td><td>28-30 inch</td><td>Regular</td><td>28-30</td></tr>
+<tr><td>L</td><td>38-40 inch</td><td>30-32 inch</td><td>Regular</td><td>30-32</td></tr>
+<tr><td>XL</td><td>40-42 inch</td><td>32-34 inch</td><td>Relaxed</td><td>32-34</td></tr>
+<tr><td>XXL</td><td>42-44 inch</td><td>34-36 inch</td><td>Loose</td><td>34-36</td></tr>
+</table>
+<div class="size-notice">Kurta-Pajama, Sherwani, Pathani, Shirt, Jeans - M-XXL aur 28-36 inch available. Custom stitching bhi milta hai.</div>
+</div>
+</div>
+
+<div class="sect" id="contact"><h2>Visit Store 📍</h2><div class="policy"><b>Trend Tadka</b>, Petrol Pump, Thatipur, Gwalior • <b>📞 9098161630</b> • <a href="https://wa.me/919098161630">Order on WhatsApp</a><br><a href="https://www.google.com/maps/search/?api=1&query=Petrol+Pump+Thatipur+Gwalior+Trend+Tadka" class="btn">🗺️ Google Maps par Location Dekhein</a><br><div style="margin-top:10px;border-radius:8px;overflow:hidden;border:1px solid #eee"><iframe src="https://maps.google.com/maps?q=Petrol+Pump+Thatipur+Gwalior+Trend+Tadka&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="260" style="border:0;" loading="lazy" allowfullscreen></iframe></div></div></div>
+
+<footer><div class="foot"><div><h4>TREND TADKA</h4>Traditional Fashion<br>Thatipur Gwalior<br>9098161630</div><div><h4>SHOP</h4><a href="#women">Women</a><br><a href="#men">Men</a><br><a href="#offers">Offers</a></div><div><h4>HELP</h4>7 Day Exchange<br>Cash UPI<br>10am-9pm</div></div></footer>
+<a class="float-wa" href="https://wa.me/919098161630">WhatsApp Order</a>
+<script>
+const products = [
+{id:1,cat:'women',name:'Cotton Silk Saree',img:'https://commons.wikimedia.org/wiki/Special:FilePath/Sari_2.jpg?width=600',fabric:'Cotton Silk Blend',size:'Free Size (Adjustable)',price:'₹1,200',mrp:'₹1,500',off:'New',desc:'Banarasi style cotton silk saree for daily wear and parties. Light weight, easy to carry.',care:'Dry clean only. Do not wash in machine.',wa:'Hi! I want to order Cotton Silk Saree from Trend Tadka, Price ₹1,200'},
+{id:2,cat:'women',name:'Suit Set',img:'https://commons.wikimedia.org/wiki/Special:FilePath/Sari_3.jpg?width=600',fabric:'Cotton / Chanderi',size:'M, L, XL, XXL',price:'₹1,500',mrp:'₹1,800',off:'New',desc:'3-piece suit set with palazzo, sharara or anarkali options. Party wear ready.',care:'Hand wash recommended.',wa:'Hi! I want to order Suit Set from Trend Tadka, Price ₹1,500'},
+{id:3,cat:'women',name:'Lehenga',img:'https://commons.wikimedia.org/wiki/Special:FilePath/Designer_lehenga_%2C_Bridal_wear_%2C_Wedding_wear_%2C_Riantas_sumanjima.jpg?width=600',fabric:'Silk / Net',size:'Custom Stitching',price:'₹5,000',mrp:'₹6,500',off:'Sale',desc:'Bridal and party lehenga with heavy work. Perfect for weddings and haldi.',care:'Dry clean only.',wa:'Hi! I want to order Lehenga from Trend Tadka, Price ₹5,000'},
+{id:4,cat:'women',name:'Kurti',img:'https://commons.wikimedia.org/wiki/Special:FilePath/Indian_women_in_Kurti.jpg?width=600',fabric:'Pure Cotton',size:'M, L, XL, XXL',price:'₹600',mrp:'₹800',off:'-40%',desc:'Short and long kurtis for office and college. Comfortable daily wear.',care:'Machine wash gentle cycle.',wa:'Hi! I want to order Kurti from Trend Tadka, Price ₹600'},
+{id:5,cat:'women',name:'Gown / Frock',img:'https://commons.wikimedia.org/wiki/Special:FilePath/Evening_gown.jpg?width=600',fabric:'Georgette',size:'M, L, XL, XXL',price:'₹1,200',mrp:'',off:'',desc:'Party gown and long frock for girls and women. Indo-western style.',care:'Dry clean recommended.',wa:'Hi! I want to order Gown/Frock from Trend Tadka, Price ₹1,200'},
+{id:6,cat:'women',name:'Palazzo Leggings',img:'https://commons.wikimedia.org/wiki/Special:FilePath/Palazzo_pants.jpg?width=600',fabric:'Cotton Lycra',size:'M, L, XL, XXL',price:'₹500',mrp:'',off:'',desc:'Palazzo pants and leggings to match with kurtis and suits.',care:'Machine wash.',wa:'Hi! I want to order Palazzo Leggings from Trend Tadka, Price ₹500'},
+{id:7,cat:'women',name:'Dupatta Blouse',img:'https://commons.wikimedia.org/wiki/Special:FilePath/Choli_blouse.jpg?width=600',fabric:'Cotton / Silk',size:'Free Size',price:'₹300',mrp:'',off:'',desc:'Fancy dupatta and ready-made blouse pieces. Petticoat also available.',care:'Hand wash.',wa:'Hi! I want to order Dupatta Blouse from Trend Tadka, Price ₹300'},
+{id:8,cat:'women',name:'Nighty Maxi',img:'https://commons.wikimedia.org/wiki/Special:FilePath/Nightgown.jpg?width=600',fabric:'Pure Cotton',size:'M, L, XL, XXL',price:'₹400',mrp:'',off:'',desc:'Comfortable cotton nighty and maxi for daily sleep wear.',care:'Machine wash.',wa:'Hi! I want to order Nighty Maxi from Trend Tadka, Price ₹400'},
+{id:9,cat:'men',name:'Kurta-Pajama',img:'https://commons.wikimedia.org/wiki/Special:FilePath/Kurta_-_Mens.jpg?width=600',fabric:'Cotton Silk',size:'M, L, XL, XXL',price:'₹800',mrp:'₹1,000',off:'Hot',desc:'Daily wear and festival kurta-pajama set. Comfortable and stylish.',care:'Hand wash recommended.',wa:'Hi! I want to order Kurta-Pajama from Trend Tadka, Price ₹800'},
+{id:10,cat:'men',name:'Sherwani',img:'https://commons.wikimedia.org/wiki/Special:FilePath/Rajput_Sherwani_2014-04-23_04-27.JPG?width=600',fabric:'Silk Brocade',size:'Custom Stitching',price:'₹8,000',mrp:'₹10,000',off:'',desc:'Dulha sherwani for weddings. Indo-western styles available.',care:'Dry clean only.',wa:'Hi! I want to order Sherwani from Trend Tadka, Price ₹8,000'},
+{id:11,cat:'men',name:'Pathani Suit',img:'https://commons.wikimedia.org/wiki/Special:FilePath/Kurta_churidar_nehru_vest.jpg?width=600',fabric:'Cotton',size:'M, L, XL, XXL',price:'₹1,200',mrp:'',off:'',desc:'Black, white and colour pathani suits. Eid and shaadi special.',care:'Hand wash.',wa:'Hi! I want to order Pathani Suit from Trend Tadka, Price ₹1,200'},
+{id:12,cat:'men',name:'Nehru Jacket',img:'https://commons.wikimedia.org/wiki/Special:FilePath/Evening_gown.jpg?width=600',fabric:'Silk',size:'M, L, XL, XXL',price:'₹1,500',mrp:'',off:'',desc:'Nehru / Modi jacket to wear over kurta. Wedding and party wear.',care:'Dry clean only.',wa:'Hi! I want to order Nehru Jacket from Trend Tadka, Price ₹1,500'},
+{id:13,cat:'men',name:'Dhoti-Kurta Set',img:'https://commons.wikimedia.org/wiki/Special:FilePath/Kurta_pajamas_for_men_Indian_Dress.jpg?width=600',fabric:'Cotton',size:'M, L, XL, XXL',price:'₹700',mrp:'',off:'',desc:'Dhoti-kurta set for puja and festival wear.',care:'Hand wash.',wa:'Hi! I want to order Dhoti-Kurta Set from Trend Tadka, Price ₹700'},
+{id:14,cat:'men',name:'Shirt',img:'https://commons.wikimedia.org/wiki/Special:FilePath/Sari_2.jpg?width=600',fabric:'Cotton / Formal',size:'M, L, XL, XXL',price:'₹600',mrp:'',off:'',desc:'Casual, formal, check and plain shirts. Party wear available.',care:'Machine wash.',wa:'Hi! I want to order Shirt from Trend Tadka, Price ₹600'},
+{id:15,cat:'men',name:'T-Shirt / Lower',img:'https://commons.wikimedia.org/wiki/Special:FilePath/Sari_3.jpg?width=600',fabric:'Cotton / Polyester',size:'M, L, XL, XXL',price:'₹500',mrp:'',off:'',desc:'Round neck and collar t-shirts. Gym and daily lower track pants.',care:'Machine wash.',wa:'Hi! I want to order T-Shirt / Lower from Trend Tadka, Price ₹500'},
+{id:16,cat:'men',name:'Jeans / Pant',img:'https://commons.wikimedia.org/wiki/Special:FilePath/Palazzo_pants.jpg?width=600',fabric:'Denim',size:'28, 30, 32, 34, 36',price:'₹900',mrp:'₹1,100',off:'',desc:'Slim, straight, formal trousers and cargo jeans.',care:'Machine wash.',wa:'Hi! I want to order Jeans/Pant from Trend Tadka, Price ₹900'}
+];
+
+const grid=document.getElementById('grid');
+function render(){
+grid.innerHTML='';
+products.forEach(p=>{
+const mrpHtml=p.mrp?`<span class="mrp">${p.mrp}</span>`:'';
+grid.innerHTML+=`<div class="pcard ${p.cat}" onclick="openModal(${p.id})"><div class="pimg"><img src="${p.img}" alt="${p.name} - Trend Tadka Gwalior" loading="lazy"></div><div class="pbody"><h3>${p.name}</h3><p>${p.desc.split('.')[0]}.</p><div class="price">${p.price} ${mrpHtml} <span class="off">${p.off}</span></div><div style="margin-top:8px;font-size:12px;color:#7e818c">Fabric: ${p.fabric}</div><a class="wa" href="${p.wa&&('https://wa.me/919098161630?text='+encodeURIComponent(p.wa))}" style="margin-top:8px">Quick Order on WhatsApp</a></div></div>`;
+});
+}
+render();
+
+function openModal(id){
+const p=products.find(x=>x.id==id);
+document.getElementById('mImg').src=p.img;
+document.getElementById('mName').innerText=p.name;
+document.getElementById('mCat').innerText=p.cat==='women'?'Ladies Collection':'Mens Collection';
+document.getElementById('mFabric').innerText=p.fabric;
+document.getElementById('mSize').innerText=p.size;
+document.getElementById('mPrice').innerText=p.price;
+document.getElementById('mPriceBig').innerText=p.price;
+document.getElementById('mDesc').innerText=p.desc;
+document.getElementById('mCare').innerText=p.care;
+document.getElementById('mWaBtn').href='https://wa.me/919098161630?text='+encodeURIComponent(p.wa);
+document.getElementById('productModal').style.display='block';
+document.body.style.overflow='hidden';
+}
+function closeModal(){
+document.getElementById('productModal').style.display='none';
+document.body.style.overflow='auto';
+}
+window.onclick=function(e){if(e.target==document.getElementById('productModal'))closeModal();};
+
+function go(){var q=document.getElementById('q').value.toLowerCase();document.querySelectorAll('.pcard').forEach(c=>{c.style.display=c.innerText.toLowerCase().includes(q)?'':'none';});}
+function f(t,b){document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.pcard').forEach(c=>{c.style.display=(t=='all'||c.classList.contains(t))?'':'none';});}
+</script>
+</body></html>

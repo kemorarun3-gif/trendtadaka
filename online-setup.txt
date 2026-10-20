@@ -1,0 +1,27 @@
+TREND TADKA - Online Setup (Thatipur, Gwalior - 9098161630)
+
+1. INSTAGRAM (5 min):
+- New ID: @trend.tadka.gwalior
+- Name: Trend Tadka | Traditional Fashion Gwalior
+- Bio: file instagram-bio.txt se copy karo
+- Pehli 3 post: Logo + Saree photo + Shop photo
+- Location: Thatipur, Gwalior tag karo
+
+2. WHATSAPP BUSINESS (5 min):
+- App: WhatsApp Business download karo, number 9098161630 se login
+- Profile: Trend Tadka, Address: Petrol Pump, Thatipur, Gwalior, Time: 10am-9pm
+- Catalog: whatsapp-catalog.txt se 16 items add karo
+- Greeting msg upar file se set karo
+
+3. GOOGLE MAP (Free customer):
+- Google me search: Google Business Profile > Add business
+- Name: Trend Tadka - Traditional Fashion
+- Category: Clothing Store
+- Address: Petrol Pump, Thatipur, Gwalior
+- Phone: 9098161630
+- Photo: Logo + Shop front add karo
+- 2 din me verify hoga, phir Gwalior me search me aaoge
+
+4. PRINT:
+- Logo/visiting-card.html kholo > Ctrl+P > PDF > printhop wale ko do (1000 card ~300-400 Rs)
+- Logo/board-flex.html kholo > Ctrl+P > PDF > flex wale ko do (3x2 ft)

@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "trend-tadka-gwalior"
+  },
+  "targets": {
+    "trend-tadka-gwalior": {
+      "hosting": {
+        "default": [
+          "trend-tadka-gwalior"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

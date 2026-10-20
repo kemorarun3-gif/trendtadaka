@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <!-- Background -->
+  <rect width="800" height="500" rx="20" fill="#3d0c0c"/>
+  <rect x="15" y="15" width="770" height="470" rx="14" fill="none" stroke="#d4af37" stroke-width="3"/>
+  <rect x="28" y="28" width="744" height="444" rx="10" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.7"/>
+  
+  <!-- Top decorative line -->
+  <g fill="#d4af37">
+    <circle cx="400" cy="95" r="6"/>
+    <rect x="300" y="93" width="80" height="2"/>
+    <rect x="420" y="93" width="80" height="2"/>
+    <circle cx="290" cy="94" r="3"/>
+    <circle cx="510" cy="94" r="3"/>
+  </g>
+  
+  <!-- Brand Name -->
+  <text x="400" y="215" text-anchor="middle" font-family="Georgia, serif" font-size="92" font-weight="bold" fill="#f5d76e" letter-spacing="4">TREND</text>
+  <text x="400" y="305" text-anchor="middle" font-family="Georgia, serif" font-size="92" font-weight="bold" fill="#ff9933" letter-spacing="8">TADKA</text>
+  
+  <!-- Divider -->
+  <g>
+    <line x1="220" y1="340" x2="580" y2="340" stroke="#d4af37" stroke-width="1.5"/>
+    <polygon points="400,328 412,340 400,352 388,340" fill="#d4af37"/>
+  </g>
+  
+  <!-- Subtitle -->
+  <text x="400" y="380" text-anchor="middle" font-family="Verdana, sans-serif" font-size="28" fill="#fff8e1" letter-spacing="6">TRADITIONAL FASHION</text>
+  <text x="400" y="415" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="20" fill="#d4af37">Parampara Me Naya Tadka</text>
+</svg>

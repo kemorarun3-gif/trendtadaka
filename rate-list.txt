@@ -1,0 +1,30 @@
+TREND TADKA - Rate List / Stock Register - Petrol Pump, Thatipur, Gwalior - 9098161630
+Date: ___________
+
+LADIES:
+| No | Item | Colour/Size | Kharid Rate | Bechne Ka Rate | Stock |
+|----|------|-------------|-------------|----------------|-------|
+| 1  | Saree - Cotton/Silk/Banarasi/Kanjivaram |             |             |                |       |
+| 2  | Suit Set - Cotton/Palazzo/Sharara/Anarkali |             |             |                |       |
+| 3  | Lehenga - Bridal/Party/Haldi |             |             |                |       |
+| 4  | Kurti - Short/Long M-XXL |             |             |                |       |
+| 5  | Gown / Frock - Party/Indo-Western |             |             |                |       |
+| 6  | Palazzo / Leggings / Jeggings |             |             |                |       |
+| 7  | Dupatta / Blouse / Petticoat |             |             |                |       |
+| 8  | Nighty / Night Suit / Maxi |             |             |                |       |
+
+MENS:
+| No | Item | Colour/Size | Kharid Rate | Bechne Ka Rate | Stock |
+|----|------|-------------|-------------|----------------|-------|
+| 9  | Kurta-Pajama | M/L/XL/XXL |             |                |       |
+| 10 | Sherwani / Indo-Western |             |             |                |       |
+| 11 | Pathani Suit |             |             |                |       |
+| 12 | Nehru / Modi Jacket |             |             |                |       |
+| 13 | Dhoti-Kurta Set |             |             |                |       |
+| 14 | Shirt - Casual/Formal | M/L/XL/XXL |             |                |       |
+| 15 | T-Shirt / Lower-Track |             |             |                |       |
+| 16 | Jeans / Pant-Trouser - 28-36 |             |             |                |       |
+
+Bill File: E:\manorma\Bill me rakho
+Stock Photo: E:\manorma\Stock me rakho
+Design Photo: E:\manorma\Design me rakho
