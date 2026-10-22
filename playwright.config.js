@@ -11,7 +11,7 @@ module.exports = defineConfig({
   use: {
     baseURL: 'http://localhost:3000',
     headless: true,
-    screenshot: 'only-on-failure',
+    screenshot: 'on',
     trace: 'on-first-retry',
     locale: 'hi-IN',
     viewport: { width: 1280, height: 800 },

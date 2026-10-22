@@ -98,6 +98,18 @@ footer{background:#fafbfc;border-top:1px solid #eee;margin-top:20px}
 .foot{max-width:1200px;margin:auto;padding:25px 15px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;font-size:13px}
 .foot h4{font-size:13px;margin-bottom:8px}
 .float-wa{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:14px 20px;border-radius:50px;text-decoration:none;font-weight:bold;z-index:200}
+/* Signup Form */
+.signup-section{padding:40px 20px;max-width:600px;margin:0 auto;text-align:center}
+.signup-box{background:#fff;border:2px solid #d4af37;border-radius:12px;padding:30px;margin:0 auto}
+.signup-title{font-size:24px;color:#3d0c0c;margin-bottom:20px;font-family:Georgia}
+.signup-form{display:flex;flex-direction:column;gap:12px}
+.signup-form input{padding:12px 16px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:100%;box-sizing:border-box}
+.signup-form input:focus{outline:none;border-color:#d4af37}
+.signup-btn{background:#3d0c0c;color:#f5d76e;padding:14px 24px;border:none;border-radius:6px;font-size:16px;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block;width:fit-content;margin-top:10px}
+.signup-btn:hover{background:#5a1414}
+.signup-note{margin-top:15px;font-size:13px;color:#7e818c}
+.success-msg{background:#fff4f4;border:2px solid #ff3f6c;border-radius:8px;padding:20px;display:none;text-align:center;margin-top:20px}
+.success-msg h3{color:#3d0c0c;margin-bottom:10px}
 /* Modal */
 .modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.8);overflow-y:auto}
 .modal-content{background:#fff;margin:5% auto;padding:20px;border-radius:12px;width:90%;max-width:700px;position:relative;animation:slide 0.3s}
@@ -137,7 +149,7 @@ footer{background:#fafbfc;border-top:1px solid #eee;margin-top:20px}
 <div class="top-strip">TREND TADKA Gwalior • Ladies + Mens • Call: 9098161630 • Petrol Pump Thatipur</div>
 <div class="header">
 <a class="logo" href="#">TREND <span>TADKA</span></a>
-<div class="nav"><a href="#women">WOMEN</a><a href="#men">MEN</a><a href="#offers">OFFERS</a><a href="#about">ABOUT</a><a href="#size-chart">SIZE CHART</a></div>
+<div class="nav"><a href="#women">WOMEN</a><a href="#men">MEN</a><a href="#offers">OFFERS</a><a href="#about">ABOUT</a><a href="#size-chart">SIZE CHART</a><a href="#signup">SIGNUP</a></div>
 <div class="search"><input id="q" placeholder="Search for Saree, Kurta, Sherwani, Jeans..." onkeyup="go()"></div>
 <div class="actions"><a href="tel:9098161630">📞<br>Call</a><a href="https://wa.me/919098161630">💬<br>WhatsApp</a><a href="#contact">📍<br>Store</a></div>
 </div>
@@ -270,7 +282,37 @@ footer{background:#fafbfc;border-top:1px solid #eee;margin-top:20px}
 
 <div class="sect" id="contact"><h2>Visit Store 📍</h2><div class="policy"><b>Trend Tadka</b>, Petrol Pump, Thatipur, Gwalior • <b>📞 9098161630</b> • <a href="https://wa.me/919098161630">Order on WhatsApp</a><br><a href="https://www.google.com/maps/search/?api=1&query=Petrol+Pump+Thatipur+Gwalior+Trend+Tadka" class="btn">🗺️ Google Maps par Location Dekhein</a><br><div style="margin-top:10px;border-radius:8px;overflow:hidden;border:1px solid #eee"><iframe src="https://maps.google.com/maps?q=Petrol+Pump+Thatipur+Gwalior+Trend+Tadka&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="260" style="border:0;" loading="lazy" allowfullscreen></iframe></div></div></div>
 
-<footer><div class="foot"><div><h4>TREND TADKA</h4>Traditional Fashion<br>Thatipur Gwalior<br>9098161630</div><div><h4>SHOP</h4><a href="#women">Women</a><br><a href="#men">Men</a><br><a href="#offers">Offers</a></div><div><h4>HELP</h4>7 Day Exchange<br>Cash UPI<br>10am-9pm</div></div></footer>
+<div class="sect signup-section" id="signup">
+<h2 class="sec">📝 Signup / Registration</h2>
+<div class="signup-box">
+<div class="signup-title">Trend Tadka me Join Karein</h3>
+<p style="margin-bottom:20px;font-size:14px;color:#7e818c">Naye customers ke liye special offer! Register karein aur pehle order pe discount payein.</p>
+<div id="signup-form">
+<form id="signupForm" class="signup-form" onsubmit="handleSignup(event)">
+<input type="text" id="signupName" placeholder="Aapka Naam (Full Name)" required>
+<input type="tel" id="signupPhone" placeholder="Mobile Number (WhatsApp)" required>
+<input type="email" id="signupEmail" placeholder="Email Address (Optional)">
+<input type="text" id="signupAddress" placeholder="Address / Mohalla (Thatipur, Gwalior)">
+<select id="signupInterest" style="padding:12px 16px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:100%;box-sizing:border-box">
+<option value="">Kya kharidna chahte hain? (Optional)</option>
+<option value="Ladies">Ladies Wear (Saree, Suit, Kurti, Lehenga)</option>
+<option value="Mens">Mens Wear (Kurta, Sherwani, Shirt, Jeans)</option>
+<option value="Both">Dono (Ladies + Mens)</option>
+</select>
+<button type="submit" class="signup-btn">📝 Register Karein</button>
+</form>
+</div>
+<div id="signupSuccess" class="success-msg">
+<h3>✅ Registration Successful!</h3>
+<p>Hamari team se aapka sampark jald hi hoga.</p>
+<p><b>Phone:</b> 9098161630 | <b>Address:</b> Petrol Pump, Thatipur, Gwalior</p>
+<button onclick="resetSignup()" style="margin-top:12px;padding:10px 20px;background:#3d0c0c;color:#fff;border:none;border-radius:6px;cursor:pointer">Dobara Register Karein</button>
+</div>
+<p class="signup-note">💡 Register karne ke baad aapka number WhatsApp business list me add ho jayega. Naye offers aur collection ki update milegi.</p>
+</div>
+</div>
+
+<footer><div class="foot"><div><h4>TREND TADKA</h4>Traditional Fashion<br>Thatipur Gwalior<br>9098161630</div><div><h4>SHOP</h4><a href="#women">Women</a><br><a href="#men">Men</a><br><a href="#offers">Offers</a><br><a href="#signup">Signup</a></div><div><h4>HELP</h4>7 Day Exchange<br>Cash UPI<br>10am-9pm</div></div></footer>
 <a class="float-wa" href="https://wa.me/919098161630">WhatsApp Order</a>
 <script>
 const products = [
@@ -325,5 +367,25 @@ window.onclick=function(e){if(e.target==document.getElementById('productModal'))
 
 function go(){var q=document.getElementById('q').value.toLowerCase();document.querySelectorAll('.pcard').forEach(c=>{c.style.display=c.innerText.toLowerCase().includes(q)?'':'none';});}
 function f(t,b){document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.pcard').forEach(c=>{c.style.display=(t=='all'||c.classList.contains(t))?'':'none';});}
+
+function handleSignup(e){
+e.preventDefault();
+const name=document.getElementById('signupName').value;
+const phone=document.getElementById('signupPhone').value;
+const email=document.getElementById('signupEmail').value;
+const address=document.getElementById('signupAddress').value;
+const interest=document.getElementById('signupInterest').value;
+const msg=`*Trend Tadka - New Signup*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email||'Not provided'}\n*Address:* ${address||'Not provided'}\n*Interest:* ${interest||'Not specified'}\n\nPlease contact this customer.`;
+const waUrl='https://wa.me/919098161630?text='+encodeURIComponent(msg);
+document.getElementById('signup-form').style.display='none';
+document.getElementById('signupSuccess').style.display='block';
+setTimeout(()=>{window.open(waUrl,'_blank');},500);
+}
+function resetSignup(){
+document.getElementById('signup-form').style.display='block';
+document.getElementById('signupSuccess').style.display='none';
+document.getElementById('signupForm').reset();
+}
+</script>
 </script>
 </body></html>
