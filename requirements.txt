@@ -1,0 +1,99 @@
+# ============================================================
+# TREND TADKA - PROJECT REQUIREMENTS
+# Traditional Fashion Store | Gwalior | Petrol Pump, Thatipur
+# ============================================================
+
+# 1. SYSTEM REQUIREMENTS
+# ============================================================
+# Operating System: Windows 10/11, macOS, or Linux
+# RAM: 4 GB minimum (8 GB recommended for Playwright tests)
+# Disk Space: 2 GB free space (browsers + node_modules)
+# Internet: Required for Firebase deploy, WhatsApp links, Google Maps
+
+# 2. NODE.JS REQUIREMENTS
+# ============================================================
+# Node.js: v18.0.0 or higher (v20.x recommended)
+# npm: v9.0.0 or higher
+# Check versions: node -v && npm -v
+
+# 3. PROJECT DEPENDENCIES (package.json)
+# ============================================================
+@playwright/cli@^0.1.22
+@playwright/test@^1.49.0
+
+# Playwright browsers (installed via npx playwright install chromium):
+# chromium - desktop testing
+# firefox  - optional, for cross-browser testing
+# webkit   - optional, for Safari testing
+
+# 4. FIREBASE CLI (for deployment)
+# ============================================================
+# Install: npm install -g firebase-tools
+# Login:   firebase login
+# Deploy:  npm run deploy  OR  firebase deploy --only hosting
+# Project: trend-tadka-gwalior
+# URL:     https://trend-tadka-gwalior.web.app
+
+# 5. BROWSERS FOR TESTING (Playwright)
+# ============================================================
+# Chromium: required (auto-installed with npx playwright install chromium)
+# Firefox:  optional (npx playwright install firefox)
+# WebKit:   optional (npx playwright install webkit)
+
+# Required setup commands:
+#   npm install
+#   npx playwright install chromium
+#   npx playwright test
+
+# 6. LOCAL DEVELOPMENT SERVER
+# ============================================================
+# Run: node server.js
+# URL: http://localhost:3000
+# Port: 3000 (configurable via PORT env variable)
+
+# 7. GITHUB REPOSITORY
+# ============================================================
+# Remote: https://github.com/kemorarun3-gif/trendtadaka.git
+# Branch: master
+# Push:   git add -A && git commit -m "message" && git push
+
+# 8. FIREBASE HOSTING
+# ============================================================
+# Project ID: trend-tadka-gwalior
+# Live URL:   https://trend-tadka-gwalior.web.app
+# Console:    https://console.firebase.google.com/project/trend-tadka-gwalior/overview
+
+# 9. BUSINESS DETAILS (for website content)
+# ============================================================
+# Store Name: Trend Tadka - Traditional Fashion
+# Address: Petrol Pump, Thatipur, Gwalior, Madhya Pradesh, India - 474001
+# Phone: +91 9098161630
+# WhatsApp: https://wa.me/919098161630
+# Hours: 10:00 AM - 9:00 PM (Daily / Roz khula)
+# Instagram: @trend.tadka.gwalior
+
+# 10. CATEGORIES & PRODUCTS
+# ============================================================
+# LADIES (8 items):
+#   Saree, Suit Set, Lehenga, Kurti, Gown/Frock, Palazzo/Leggings, Dupatta/Blouse, Nighty/Maxi
+#
+# MENS (8 items):
+#   Kurta-Pajama, Sherwani, Pathani Suit, Nehru/Modi Jacket, Dhoti-Kurta Set, Shirt, T-Shirt/Lower, Jeans/Pant
+
+# SIZES:
+#   Ladies: M, L, XL, XXL (Free Size for some items)
+#   Mens: M, L, XL, XXL (Jeans: 28-36 inch)
+
+# PRICING RANGE:
+#   ₹300 - ₹8,000 (depending on item)
+
+# 11. POLICIES
+# ============================================================
+# Exchange / Refund: 7 days (with bill + tag, unused item)
+# Delivery: Free in Gwalior (min order ₹500), outside ₹100-200
+# Payment: Cash on Delivery (COD), UPI, PhonePe, Google Pay, Paytm
+# Custom stitching available for Sherwani, Lehenga, etc.
+
+# ============================================================
+# END OF REQUIREMENTS
+# ============================================================
